@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container-fluid {
+
+            width: 100%;
+            height: 100vh;
+            background: transparent;
+
+        }
+
+        .row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 100px;
+            background: linear-gradient(#FF3CAC, #784BA0, #2B86C5);
+
+
+        }
+
+        .btn {
+            margin: 10px;
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+            border: 0;
+            outline: 0;
+            cursor: pointer;
+            background: transparent;
+            font-size: 20px;
+            box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.2);
+            color: #000000;
+
+        }
+
+        #screen {
+            display: flex;
+            font-size: 40px;
+            justify-content: flex-end;
+            margin: 10px 0;
+            background-color: rgb(246, 246, 246);
+
+            height: 60px;
+            width: 300px;
+            margin-left: 20px;
+        }
+
+        #form #screen input {
+            text-align: right;
+            flex: 1;
+            box-shadow: none;
+
+        }
+
+        #equal {
+            width: 145px;
+
+        }
+
+        #form {
+
+            padding-top: 10px;
+            border-radius: 10px;
+            width: 350px;
+            border: 2px solid #000000;
+
+
+
+
+        }
+
+        #div {
+
+            border-radius: 10px;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+         
+
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULATOR</title>
+</head>
+
+<body>
+
+
+
+    <div class="container-fluid mt-4 pb-2 px-sm-4">
+        <div class="row">
+
+            <div class="col-sm mb-3 aos-init aos-animate" data-aos="fade" data-aos-delay="150" id="div">
+                <h1 align="center" style="font-family: Arial, Helvetica, sans-serif;">CALCULATOR</h1>
+
+                <form id="form">
+                    <input type="text" id="screen" class="form-control"> <br>
+
+
+
+
+
+
+                    <input type="reset" class="btn" value="AC" onclick="demo('AC')">
+                    <input type="button" class="btn" value="DE"
+                        onclick="screen.value =screen.value.toString().slice(0,-1)">
+                    <input type="button" class="btn" value="•" onclick="demo('.')">
+                    <input type="button" class="btn" value="/" onclick="demo('/')"> <br>
+                    <input type="button" class="btn" value="7" onclick="demo(7)">
+                    <input type="button" class="btn" value="8" onclick="demo(8)">
+                    <input type="button" class="btn" value="9" onclick="demo(9)">
+                    <input type="button" class="btn" value="*" onclick="demo('*')"> <br>
+                    <input type="button" class="btn" value="4" onclick="demo(4)">
+                    <input type="button" class="btn" value="5" onclick="demo(5)">
+                    <input type="button" class="btn" value="6" onclick="demo(6)">
+                    <input type="button" class="btn" value="-" onclick="demo('-')"> <br>
+                    <input type="button" class="btn" value="1" onclick="demo(1)">
+                    <input type="button" class="btn" value="2" onclick="demo(2)">
+                    <input type="button" class="btn" value="3" onclick="demo(3)">
+                    <input type="button" class="btn" value="+" onclick="demo('+')"> <br>
+                    <input type="button" class="btn" value="0" onclick="demo(0)">
+                    <input type="button" class="btn" value="00" onclick="demo('00')">
+
+
+                    <input type="button" class="btn " id="equal" value="=" onclick="demo1('=')">
+                    <br><br>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const demo = (number) => {
+
+            document.getElementById('screen').value += number
+        }
+        const demo1 = () => {
+            document.getElementById('screen').value = eval(document.getElementById('screen').value)
+
+        }
+    </script>
+
+
+
+</body>
+
+</html>
